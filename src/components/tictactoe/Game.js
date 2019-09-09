@@ -1,7 +1,8 @@
 import React from "react";
 import Board from "./Board";
 import "./Game.css";
-import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import NavigationIcon from '@material-ui/icons/Navigation';
 class Game extends React.Component {
     constructor(props){
     super(props);
@@ -37,6 +38,7 @@ class Game extends React.Component {
     })
     }
     render() {
+      
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
@@ -46,7 +48,10 @@ class Game extends React.Component {
     'К началу игры';
     return (
     <li key = {move}>
-    <button onClick={()=>this.jumpTo(move)}>{desc}</button>
+    <Fab variant="extended" color="primary"  onClick={()=>this.jumpTo(move)} aria-label="add" >
+          <NavigationIcon  />
+          {desc}
+        </Fab>
     </li>
     )
     })
@@ -65,9 +70,7 @@ class Game extends React.Component {
     <div className="game-info">
     <div>{status}</div>
     <ol>{moves}</ol>
-    <Button variant="contained" color="primary">
-    Hello World
-  </Button>
+ 
  
     </div>
     

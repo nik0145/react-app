@@ -23,7 +23,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-
+import Paper from '@material-ui/core/Paper';
 
  
 function App() {
@@ -33,6 +33,9 @@ function App() {
   const useStyles = makeStyles(theme => ({
     root: {
       display: 'flex',
+    },
+    paper: {
+      padding: theme.spacing(3, 2),
     },
     appBar: {
       zIndex: theme.zIndex.drawer + 1,
@@ -151,10 +154,10 @@ function App() {
       <Divider />
      
       <List>
-        {[{alink:'/',text:'asd'},
-         {alink:'/weather',text:'asd'},
-         {alink:'/tictactoe',text:'asd'},
-         {alink:'/todo',text:'asd'}].map((obj, index) => (
+        {[{alink:'/',text:'Home'},
+         {alink:'/weather',text:'App weather'},
+         {alink:'/tictactoe',text:'tic tac toe'},
+         {alink:'/todo',text:'todo list'}].map((obj, index) => (
           <ListItem button key={index} component={Link} to={obj.alink}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={obj.text} />
@@ -167,12 +170,12 @@ function App() {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       
-   
+     <Paper className={classes.paper}>
       <Route exact path ="/" component={Home}></Route>
       <Route  path ="/weather" component={WeatherApp}></Route>
       <Route  path ="/todo" component={ListTask}></Route>
       <Route  path ="/tictactoe" component={Game}></Route>
-  
+      </Paper>
     </main>
 
     </Router>

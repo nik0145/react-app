@@ -1,7 +1,7 @@
 import React from "react";
 class Info extends React.Component{
   render(){
-    return(<div>компонент с информацией</div> )
+    return(<div>Enter 'Moscow'</div> )
   }
 }
  export default Info;

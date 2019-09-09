@@ -9,7 +9,9 @@
     content: "";
     display: table;
   }
-  
+  li{
+    margin: 10px;
+  }
   .status {
     margin-bottom: 10px;
   }
