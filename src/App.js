@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router,Link,Route} from 'react-router-dom';
 import './App.css';
 import Home from "./components/Home";
+import ReduxComponent from "./components/Redux";
 import WeatherApp from "./components/weatherApp/weatherApp";
 import ListTask from "./components/List/list";
 import Game from "./components/tictactoe/Game";
@@ -156,6 +157,7 @@ function App() {
       <List>
         {[{alink:'/',text:'Home'},
          {alink:'/weather',text:'App weather'},
+         {alink:'/redux-test',text:'Redux input'},
          {alink:'/tictactoe',text:'tic tac toe'},
          {alink:'/todo',text:'todo list'}].map((obj, index) => (
           <ListItem button key={index} component={Link} to={obj.alink}>
@@ -175,6 +177,7 @@ function App() {
       <Route  path ="/weather" component={WeatherApp}></Route>
       <Route  path ="/todo" component={ListTask}></Route>
       <Route  path ="/tictactoe" component={Game}></Route>
+      <Route  path ="/redux-test" component={ReduxComponent}></Route>
       </Paper>
     </main>
 
